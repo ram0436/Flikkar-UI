@@ -1,0 +1,32 @@
+
+<div class="class row">
+  
+<div class="custom">
+  <!-- <div class="line"><hr></div> -->
+<mat-card class="example-card">
+ 
+  <mat-card-header>
+    <mat-card-title><div class="clr"> {{item.jobTitle}}</div></mat-card-title>
+    <mat-card-subtitle>{{item.companyName}}</mat-card-subtitle>
+    <mat-card-subtitle><b>INR :</b>{{item.minSalary}} - {{item.maxSalary}} &nbsp;&nbsp;&nbsp;&nbsp; <b>Exp :</b> {{item.minExperience}} - {{item.maxExperience}} Years &nbsp;&nbsp;&nbsp;&nbsp; <b>Job Type: </b>Permanent  &nbsp;&nbsp;&nbsp;&nbsp; <b>Posted: </b>2 day(s) ago</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+   <div class="content"><b>Job Discription :</b> {{item.jobDescription}} <br></div>
+      
+      
+      <br><br>
+     <div class="content"><b>Job Location :</b> {{item.cityId}}</div>
+  </mat-card-content>
+
+  <mat-card-actions>
+   <div class="content"> <button mat-raised-button color="primary">Apply</button>
+    <button mat-raised-button color="primary" (click)="getJobDetail()">Details..</button>
+  </div>
+    
+  </mat-card-actions>
+</mat-card>
+</div>
+
+</div>
+

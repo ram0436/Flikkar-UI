@@ -1,0 +1,110 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button style="font-size:20px; color:whitesmoke" mat-button (click)="sidenav.toggle()">☰</button>
+
+    <button style="font-size:15px" mat-button [routerLink]="['/faq']">FAQ</button>|
+    <button style="font-size:15px" mat-button [routerLink]="['/contact-us']">Contact Us</button>|
+    <button style="font-size:15px" mat-button [routerLink]="['/home']">Dashboard</button>
+    <!-- <button style="font-size:15px" mat-button [routerLink]="['/sign-up']">SignUp</button> -->
+
+    <span class="example-spacer"></span>
+    <button style="font-size:17px" mat-raised-button color="warn" [routerLink]="['/job-post']">
+      << Post A Free Job </button> </mat-toolbar-row> </mat-toolbar> <mat-sidenav-container class="example-container">
+        <mat-sidenav #sidenav mode="side" opened class="example-sidenav">
+          <br>
+
+          &nbsp;&nbsp;&nbsp;&nbsp; <button mat-button color="primary" (click)="clearAllFilters()">Clear Filters</button>
+          <form [formGroup]="filterForm">
+            <mat-form-field>
+              <mat-label>Freshness</mat-label>
+              <mat-select formControlName="jobFreshness">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of jobFreshness" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+
+            <mat-form-field>
+              <mat-label>Job Profile</mat-label>
+              <mat-select formControlName="jobProfile" (ngModelChange)="setSelectedProfileId($event)">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of jobProfile" [value]="item.jobProfileId">{{item.jobProfileName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Qualification</mat-label>
+              <mat-select formControlName="qualification">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of qualification" [value]="item.qualificationId">
+                  {{item.qualificationDetail}}
+                </mat-option>
+
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Subject</mat-label>
+              <mat-select formControlName="Subject">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of subject" [value]="item.subjectId">{{item.subjectName}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Academic Type</mat-label>
+              <mat-select formControlName="academicType">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of academicType" [value]="item.academicTypeId">{{item.academicTypeName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+
+            <mat-form-field>
+              <mat-label>Experience (Years)</mat-label>
+              <mat-select formControlName="experience">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of experience" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+
+            <mat-form-field>
+              <mat-label>Job Type</mat-label>
+              <mat-select formControlName="jobType">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of jobType" [value]="item.jobTypeId">{{item.jobTypeDetail}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>City</mat-label>
+              <mat-select formControlName="city">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of city" [value]="item.id">{{item.value}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>Monthly Salary</mat-label>
+              <mat-select formControlName="salary">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of salary" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </form>
+
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+          <br><br>
+          <router-outlet></router-outlet>
+        </mat-sidenav-content>
+        </mat-sidenav-container>
+
+        <mat-toolbar class="example-footer">
+          Copyright @ Flikkar India Pvt. Ltd.
+        </mat-toolbar>

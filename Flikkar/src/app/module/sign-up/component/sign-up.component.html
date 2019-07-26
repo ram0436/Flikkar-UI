@@ -1,0 +1,48 @@
+
+<div class="example-card ">
+  <form [formGroup]= "registrationForm">
+
+  <mat-card>
+      <h6 style="text-align: center">Sign Up</h6>
+    
+    <mat-card-content>
+
+      <mat-form-field class="example-container ">
+        <input formControlName="userId" matInput placeholder="UserId">
+      </mat-form-field>
+
+      <mat-form-field class="example-container ">
+        <input formControlName="firstName" matInput placeholder="First Name">
+      </mat-form-field>
+
+      <mat-form-field class="example-container ">
+        <input formControlName="lastName" matInput placeholder="Last Name">
+      </mat-form-field>
+
+      <mat-form-field class="example-container ">
+        <input formControlName="email" matInput placeholder="Email Address">
+      </mat-form-field>
+
+      <mat-form-field class="example-container ">
+        <input formControlName="mobile" matInput placeholder="Contact Number">
+      </mat-form-field>
+
+      <mat-form-field class="example-container ">
+        <input  formControlName="password" matInput placeholder="Password">
+      </mat-form-field>
+
+      
+      <mat-form-field class="example-container ">
+          <input matInput placeholder="Confirm Password">
+        </mat-form-field>
+        <div class="btnCard">
+      <button mat-raised-button color="primary" type="submit" (click)="onSubmit($event)">Go Register </button>
+      <br><br>
+      Already have a Account. Lets 
+        <a [routerLink]="['/login']">Login</a>
+      </div>
+      </mat-card-content>
+
+  </mat-card>
+</form>
+</div>

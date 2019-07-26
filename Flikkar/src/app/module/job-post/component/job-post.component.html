@@ -1,0 +1,162 @@
+<div class="class row">
+  <div class="col-9">
+    <div class="example-card ">
+      <form [formGroup]="jobDetailForm">
+
+        <mat-card>
+
+          <h5 style="text-align: center;color: #3498DB"> Job Post Details</h5>
+
+          <mat-card-content>
+
+            <mat-form-field class="example-container ">
+              <input formControlName="JobTitle" matInput placeholder="Job Title">
+            </mat-form-field>
+            <mat-form-field class="example-container ">
+              <input formControlName="CompanyName" matInput placeholder="Organization Name">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Job Profile</mat-label>
+              <mat-select formControlName="JobProfileId">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of jobProfile" [value]="item.jobProfileId">{{item.jobProfileName}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <mat-form-field>
+              <mat-label>Subject</mat-label>
+              <mat-select formControlName="SubjectId">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of subject" [value]="item.subjectId">{{item.subjectName}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <mat-form-field>
+              <mat-label>Qualification</mat-label>
+              <mat-select formControlName="QualificationId">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of qualification" [value]="item.qualificationId">
+                  {{item.qualificationDetail}}</mat-option>
+
+              </mat-select>
+            </mat-form-field>
+            <mat-form-field class="example-container ">
+              <input formControlName="email" matInput placeholder="Email">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Academic Type</mat-label>
+              <mat-select formControlName="academicTypeId">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of academicType" [value]="item.academicTypeId">{{item.academicTypeName}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field>
+              <mat-label>Min Experience (Years)</mat-label>
+              <mat-select formControlName="MinExperience">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of minExperience" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <mat-form-field>
+              <mat-label>Max Experience (Years)</mat-label>
+              <mat-select formControlName="MaxExperience">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of maxExperience" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="example-container ">
+              <input formControlName="mobile" matInput placeholder="Mobile">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Min Salary</mat-label>
+              <mat-select formControlName="MinSalary">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of minSalary" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <mat-form-field>
+              <mat-label>Max Salary</mat-label>
+              <mat-select formControlName="MaxSalary">
+
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of maxSalary" [value]="item">{{item}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+            <mat-form-field>
+              <mat-label>Job Type</mat-label>
+              <mat-select formControlName="JobTypeId">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let item of jobType" [value]="item.jobTypeId">{{item.jobTypeDetail}}</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+
+
+
+            <mat-form-field class="example-container ">
+              <textarea formControlName="JobDescription" matInput placeholder="Job Description"></textarea>
+            </mat-form-field>
+
+            <mat-form-field class="example-container ">
+              <textarea formControlName="CompanyDetail" matInput placeholder="Organization Detail"></textarea>
+            </mat-form-field>
+            <br>
+
+            <div class="btnCard">
+              <button mat-raised-button color="primary" (click)="onSubmit($event)">Go Submit</button>
+
+            </div>
+          </mat-card-content>
+
+        </mat-card>
+      </form>
+
+    </div>
+  </div>
+  <div class="marque" style="color:lightslategray" class="col-3">
+    <div style="color:#3498DB;font-size: 18px"><b>Our Top Recruiters</b></div>
+    <marquee behavior="scroll" direction="down" height="40%">
+      Sunbeam Academy <br><br>
+      DPS Kashi <br><br>
+      TATA Motors <br><br>
+      Vishal Auto Agency <br><br>
+      Krishna Hundai <br><br>
+      JHV Mall <br><br>
+      Youngtech S/w Pvt. Ltd <br><br>
+      DPS Kashi <br><br>
+      TATA Motors <br><br>
+      Vishal Auto Agency <br><br>
+      Krishna Hundai <br><br>
+      IP Mall<br><br>
+      Sunbeam Academy <br><br>
+      DPS Kashi <br><br>
+      TATA Motors <br><br>
+      Vishal Auto Agency <br><br>
+      Krishna Hundai <br><br>
+      JHV Maull <br><br>
+      Silver Grove School<br><br>
+      WH Smith School<br><br>
+      Happy Model School <br><br>
+    </marquee>
+  </div>
+
+</div>
