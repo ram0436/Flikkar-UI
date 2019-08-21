@@ -11,6 +11,7 @@ import { JobDetailComponent } from './module/job-detail/job-detail.component';
 
 const routes: Routes = [
 
+  { path: '', redirectTo: '/home',pathMatch: 'full' },
   { path:'login', component:LoginComponent},
   { path:'sign-up', component:SignUpComponent},
   { path:'job-post', component:JobPostComponent},

@@ -17,25 +17,22 @@ import { PARAMETERS } from '@angular/core/src/util/decorators';
 })
 export class JobService {
 
-  private urlCreateJob: string = 'job/CreateJob';
-  private urlGetAllJob: string = 'http://localhost:62890/api/job/GetAllJobs';
-  private urlGetAllJobProfile: string = 'http://localhost:62890/api/Job/GetAllJobProfile';
-
-  private urlGetAllJobType: string = 'http://localhost:62890/api/Job/GetAllJobType';
-  private urlGetAllIndustry: string = 'http://localhost:62890/api/Job/GetAllIndustry';
-  private urlGetAllQualification: string = 'http://localhost:62890/api/Job/GetAllQualification';
-
-  // fliters
-  private urlGetJobByProfileId: string = 'http://localhost:62890/api/job/GetJobByJobProfileId?{JobProfileId}';
-    private urlGetAllAcademicType: string = 'http://localhost:62890/Api/Job/GetAllAcademicType';
-    private urlGetAllSubject: string = 'http://localhost:62890/api/job/GetAllSubject';
+  private urlCreateJob: string = Constant.baseUrl + 'job/CreateJob';
+  private urlGetAllJob: string = Constant.baseUrl + 'job/GetAllJobs';
+  private urlGetAllJobProfile: string = Constant.baseUrl + 'Job/GetAllJobProfile';
+  private urlGetAllJobType: string = Constant.baseUrl + 'Job/GetAllJobType';
+  private urlGetAllIndustry: string = Constant.baseUrl + 'Job/GetAllIndustry';
+  private urlGetAllQualification: string = Constant.baseUrl + 'Job/GetAllQualification';
+  private urlGetJobByProfileId: string = Constant.baseUrl + 'job/GetJobByJobProfileId?{JobProfileId}';
+  private urlGetAllAcademicType: string = Constant.baseUrl + 'Job/GetAllAcademicType';
+  private urlGetAllSubject: string = Constant.baseUrl + 'job/GetAllSubject';
 
   protected jobProfileId: string;
   constructor(private http: HttpClient) {
 
   }
   getJobByJobProfileId(jobProfileId): Observable<IJobDetail[]> {
-    return this.http.get<IJobDetail[]>(this.urlGetJobByProfileId, {params:{jobProfileId}});
+    return this.http.get<IJobDetail[]>(this.urlGetJobByProfileId, { params: { jobProfileId } });
   }
   getAllSubject(): Observable<ISubject[]> {
     return this.http.get<ISubject[]>(this.urlGetAllSubject);
@@ -48,7 +45,7 @@ export class JobService {
   }
 
   saveJobDetail(userData) {
-    return this.http.post<any>(Constant.baseUrl + this.urlCreateJob, userData)
+    return this.http.post<any>(this.urlCreateJob, userData)
   }
   getAllJobType(): Observable<IJobType[]> {
     return this.http.get<IJobType[]>(this.urlGetAllJobType);
@@ -60,9 +57,9 @@ export class JobService {
     return this.http.get<IQualification[]>(this.urlGetAllQualification);
   }
   set setProfileIdFromDropDownSelection(jobProfileId: string) {
-    this.jobProfileId= jobProfileId;
+    this.jobProfileId = jobProfileId;
   }
-  get getProfileIdFromDropDownSelection():string{
+  get getProfileIdFromDropDownSelection(): string {
     return this.jobProfileId;
   }
   getAllAcademicType(): Observable<IAcademicType[]> {
