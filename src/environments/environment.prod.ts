@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUrl: "https://clothwear2-api.azurewebsites.net/api/",
+  baseUrl: "https://flikkar-api-e2hnesgufmbzescn.centralindia-01.azurewebsites.net/api/",
 };
